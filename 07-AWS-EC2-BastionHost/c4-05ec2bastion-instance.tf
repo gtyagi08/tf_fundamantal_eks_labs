@@ -5,7 +5,7 @@ module "ec2_public" {
 
   ami                    = data.aws_ami.amzlinux2.id
   instance_type          = "t2.micro"
-  key_name               = "terraform-ec2-keypair"
+  key_name               = "terraform-key"
   #monitoring             = true
   vpc_security_group_ids = [module.public_bastian_sg.security_group_id]
   subnet_id              = module.vpc.public_subnets[0]
